@@ -1,0 +1,28 @@
+<!doctype html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+
+    <title th:text="JOSTIK"/>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+<header th:insert="header::normheader"></header>
+
+    <div class="container mt-5">
+        <br>
+        <h1>Все записи</h1>
+        <br>
+        <h1 th:text="${elem}"></h1>
+        <div th:each="foreach : ${elements}" class="alert alert-info mt-3">
+            <h3 th:text="${foreach.name}"/>
+            <p th:text="${foreach.age}"/>
+            <a th:href="'/print/' + ${foreach.id}">Перейти</a>
+        </div>
+    </div>
+
+<footer th:insert="footer::normfooter"></footer>
+</body>
+</html>
